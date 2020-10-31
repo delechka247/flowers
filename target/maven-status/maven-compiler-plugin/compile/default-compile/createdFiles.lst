@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ru\itis\inf\servlets\LoginServlet.class
 ru\itis\inf\servlets\RegistrationServlet.class
 ru\itis\inf\utils\PasswordMaker.class
@@ -7,3 +8,8 @@ ru\itis\inf\models\User.class
 ru\itis\inf\repository\CrudRepository.class
 ru\itis\inf\servlets\ProfileServlet.class
 ru\itis\inf\repository\UsersRepository.class
+=======
+ru\itis\inf\servlets\MainServlet.class
+ru\itis\inf\servlets\LoginServlet.class
+ru\itis\inf\servlets\RegistrationServlet.class
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496

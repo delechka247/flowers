@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class RegistrationServlet extends HttpServlet {
-
-
-
     @Override
     public void init(ServletConfig config) throws ServletException {
 

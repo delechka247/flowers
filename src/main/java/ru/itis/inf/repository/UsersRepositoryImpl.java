@@ -2,6 +2,7 @@ package ru.itis.inf.repository;
 
 import ru.itis.inf.models.User;
 
+<<<<<<< HEAD
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.List;
@@ -72,26 +73,49 @@ public class UsersRepositoryImpl implements UsersRepository{
     }
 
     @Override
+=======
+import java.util.List;
+
+public abstract class UsersRepositoryImpl implements UsersRepository{
+
+
+    public void create(User entity) {
+
+    }
+
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public void update(User entity) {
 
     }
 
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public void delete(User entity) {
 
     }
 
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public List<User> findAll() {
         return null;
     }
 
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public List<User> findAllById(int id) {
         return null;
     }
 
+<<<<<<< HEAD
     @Override
+=======
+>>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public User findUserByEmail(String email) {
         return null;
     }
