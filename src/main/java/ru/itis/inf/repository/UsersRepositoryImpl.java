@@ -2,17 +2,20 @@ package ru.itis.inf.repository;
 
 import ru.itis.inf.models.User;
 
-<<<<<<< HEAD
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.List;
 
-public class UsersRepositoryImpl implements UsersRepository{
+public class UsersRepositoryImpl implements UsersRepository {
     private DataSource dataSource;
 
     //language=SQL
     private final static String SQL_INSERT = "insert into users(email, hashed_password, first_name, phone_number, birthday) " +
             "values (?, ?, ?, ?, ?)";
+
+    //language=SQL
+    private static final String SQL_FIND_BY_EMAIL = "select * from users where email = ? limit 1";
+
 
     public UsersRepositoryImpl(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -25,7 +28,7 @@ public class UsersRepositoryImpl implements UsersRepository{
         ResultSet resultSet = null;
         try {
             connection = dataSource.getConnection();
-            statement = connection.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS );
+            statement = connection.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS);
 
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getHashedPassword());
@@ -46,11 +49,9 @@ public class UsersRepositoryImpl implements UsersRepository{
                 throw new SQLException("Problem with retrieve id");
             }
 
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new IllegalStateException(e);
-        }
-        finally {
+        } finally {
             if (resultSet != null) {
                 try {
                     resultSet.close();
@@ -73,50 +74,152 @@ public class UsersRepositoryImpl implements UsersRepository{
     }
 
     @Override
-=======
-import java.util.List;
-
-public abstract class UsersRepositoryImpl implements UsersRepository{
-
-
-    public void create(User entity) {
-
-    }
-
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public void update(User entity) {
 
     }
 
-<<<<<<< HEAD
     @Override
-=======
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public void delete(User entity) {
 
     }
 
-<<<<<<< HEAD
     @Override
-=======
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public List<User> findAll() {
         return null;
     }
 
-<<<<<<< HEAD
     @Override
-=======
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
     public List<User> findAllById(int id) {
         return null;
     }
 
-<<<<<<< HEAD
     @Override
-=======
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
-    public User findUserByEmail(String email) {
-        return null;
+    public String findUserByEmailToLogin(String email) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_FIND_BY_EMAIL);
+
+            statement.setString(1, email);
+            resultSet = statement.executeQuery();
+
+
+            if (resultSet.next()) {
+                return resultSet.getString("hashed_password");
+            } else {
+                throw new SQLException("Unregistered email");
+            }
+
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                }
+            }
+        }
+    }
+
+    @Override
+    public boolean isUserRegistered(String email) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_FIND_BY_EMAIL);
+
+            statement.setString(1, email);
+            resultSet = statement.executeQuery();
+
+
+            if (resultSet.next()) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                }
+            }
+        }
+    }
+
+    @Override
+    public Long getIdByEmail(String email) {
+
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_FIND_BY_EMAIL);
+
+            statement.setString(1, email);
+            resultSet = statement.executeQuery();
+
+
+            if (resultSet.next()) {
+                return resultSet.getLong("id");
+            } else {
+                throw new SQLException();
+            }
+
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                }
+            }
+        }
     }
 }

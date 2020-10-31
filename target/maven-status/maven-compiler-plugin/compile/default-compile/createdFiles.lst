@@ -1,15 +1,15 @@
-<<<<<<< HEAD
-ru\itis\inf\servlets\LoginServlet.class
+ru\itis\inf\services\LoginServiceImpl.class
 ru\itis\inf\servlets\RegistrationServlet.class
 ru\itis\inf\utils\PasswordMaker.class
+ru\itis\inf\repository\CrudRepository.class
+ru\itis\inf\servlets\ProfileServlet.class
+ru\itis\inf\listeners\CustomServletContextListener.class
+ru\itis\inf\services\RegistrationServiceImpl.class
+ru\itis\inf\services\LoginService.class
+ru\itis\inf\services\RegistrationService.class
+ru\itis\inf\servlets\LoginServlet.class
 ru\itis\inf\repository\UsersRepositoryImpl.class
 ru\itis\inf\servlets\MainServlet.class
 ru\itis\inf\models\User.class
-ru\itis\inf\repository\CrudRepository.class
-ru\itis\inf\servlets\ProfileServlet.class
 ru\itis\inf\repository\UsersRepository.class
-=======
-ru\itis\inf\servlets\MainServlet.class
-ru\itis\inf\servlets\LoginServlet.class
-ru\itis\inf\servlets\RegistrationServlet.class
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
+ru\itis\inf\models\User$UserBuilder.class

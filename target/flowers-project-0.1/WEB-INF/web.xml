@@ -30,7 +30,6 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-<<<<<<< HEAD
     <servlet>
         <servlet-name>profile-servlet</servlet-name>
         <servlet-class>ru.itis.inf.servlets.ProfileServlet</servlet-class>
@@ -40,6 +39,4 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
-=======
->>>>>>> fb8ff9fefce00b54316a1b4abbaad35f3b62b496
 </web-app>

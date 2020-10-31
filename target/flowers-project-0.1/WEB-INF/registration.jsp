@@ -257,6 +257,21 @@
                                placeholder="Повторите пароль">
                         <i class="fa fa-lock"></i>
                     </div>
+                    <div class="form-group help">
+                        <input type="text" name="firstName" class="form-control" id="inputName"
+                               placeholder="Имя">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="number" name="phoneNumber" class="form-control" id="inputNumber"
+                               placeholder="Номер телефона">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="date" name="birthday" class="form-control" id="inputBirthday"
+                               placeholder="Дата рождения">
+                        <i class="fa fa-lock"></i>
+                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Регистрация</button>
                     </div>

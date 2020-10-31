@@ -28,17 +28,23 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public void register(String email, String password, String firstName, String phoneNumber, String birthday) {
-        User user = User.builder()
-                .email(email)
-                .hashedPassword(passwordEncoder.encode(password))
-                .firstName(firstName)
-                .phoneNumber(phoneNumber)
-                .birthday(birthday)
-                .build();
+    public String register(String email, String password, String firstName, String phoneNumber, String birthday){
+            if (email.equals("") || password.equals("") || firstName.equals("")
+                    || phoneNumber.equals("") || birthday.equals(""))
+                return "Found empty field";
+            if (usersRepository.isUserRegistered(email))
+                return "This email is registered";
+            User user = User.builder()
+                    .email(email)
+                    .hashedPassword(passwordEncoder.encode(password))
+                    .firstName(firstName)
+                    .phoneNumber(phoneNumber)
+                    .birthday(birthday)
+                    .build();
 
-        usersRepository.create(user);
-        System.out.println("Успешно зарегистрирован: " + user);
+            usersRepository.create(user);
+            System.out.println("Успешно зарегистрирован: " + user);
+            return "ok";
     }
 
 }

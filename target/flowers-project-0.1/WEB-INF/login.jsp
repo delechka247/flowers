@@ -246,11 +246,13 @@
                 <form class="form-horizontal rounded-1 shadow-lg" method="post">
                     <span class="heading">АВТОРИЗАЦИЯ</span>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="E-mail">
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="E-mail"
+                        value="${cookie.get("emailCookie").value}">
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="form-group help">
-                        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Пароль">
+                        <input type="password" class="form-control" name="password" id="inputPassword"
+                               placeholder="Пароль" value="${cookie.get("passwordCookie").value}">
                         <i class="fa fa-lock"></i>
                     </div>
                     <div class="form-group">
