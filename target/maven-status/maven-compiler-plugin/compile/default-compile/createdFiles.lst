@@ -1,9 +1,11 @@
 ru\itis\inf\repository\PotsRepositoryImpl.class
 ru\itis\inf\services\ProductService.class
 ru\itis\inf\filters\AuthenticationFilter.class
+ru\itis\inf\repository\ReviewRepository.class
 ru\itis\inf\listeners\CustomServletContextListener.class
 ru\itis\inf\models\Pot$PotBuilder.class
 ru\itis\inf\services\RegistrationServiceImpl.class
+ru\itis\inf\repository\ReviewRepositoryImpl.class
 ru\itis\inf\services\RegistrationService.class
 ru\itis\inf\services\UsersServiceImpl.class
 ru\itis\inf\repository\PotsRepository.class
@@ -24,7 +26,9 @@ ru\itis\inf\servlets\ProfileServlet.class
 ru\itis\inf\models\Flower.class
 ru\itis\inf\repository\FlowersRepository.class
 ru\itis\inf\servlets\ProductServlet.class
+ru\itis\inf\models\Review.class
 ru\itis\inf\services\LoginService.class
+ru\itis\inf\models\Review$ReviewBuilder.class
 ru\itis\inf\servlets\LoginServlet.class
 ru\itis\inf\repository\BouquetsRepositoryImpl.class
 ru\itis\inf\repository\UsersRepositoryImpl.class

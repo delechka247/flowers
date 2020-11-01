@@ -182,7 +182,7 @@
                                             <img src="resources/images/bouquets/<%=bouquetsList.get(i).getId()%>.jpg"
                                                  class="card-img-top" alt="<%=bouquetsList.get(i).getName()%>">
                                             <div class="card-body p-0">
-                                                <a href="#">
+                                                <a href="/Flowers_project_war/product?id=<%=bouquetsList.get(i).getId()%>">
                                                     <h5 class="card-title pt-1 mb-1">
                                                         <%=bouquetsList.get(i).getName()%>
                                                     </h5>
@@ -206,7 +206,7 @@
                                             <img src="resources/images/bouquets/<%=bouquetsList.get(i + 1).getId()%>.jpg"
                                                  class="card-img-top" alt="<%=bouquetsList.get(i + 1).getName()%>">
                                             <div class="card-body p-0">
-                                                <a href="#">
+                                                <a href="/Flowers_project_war/product?id=<%=bouquetsList.get(i + 1).getId()%>">
                                                     <h5 class="card-title pt-1 mb-1">
                                                         <%=bouquetsList.get(i + 1).getName()%>
                                                     </h5>
@@ -231,7 +231,7 @@
                                             <img src="resources/images/bouquets/<%=bouquetsList.get(i + 2).getId()%>.jpg"
                                                  class="card-img-top" alt="<%=bouquetsList.get(i + 2).getName()%>">
                                             <div class="card-body p-0">
-                                                <a href="#">
+                                                <a href="/Flowers_project_war/product?id=<%=bouquetsList.get(i + 2).getId()%>">
                                                     <h5 class="card-title pt-1 mb-1">
                                                         <%=bouquetsList.get(i + 2).getName()%>
                                                     </h5>

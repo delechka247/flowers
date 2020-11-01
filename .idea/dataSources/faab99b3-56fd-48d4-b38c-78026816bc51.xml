@@ -789,7 +789,7 @@ false Zulu
     <database id="2" parent="1" name="flowers_project">
       <ObjectId>16421</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>561</IntrospectionStateNumber>
+      <IntrospectionStateNumber>579</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16422|16424|1
 sequence|table|16430|16432|1
@@ -799,6 +799,9 @@ sequence|table|16454|16458|1
 sequence|table|16456|16458|2
 sequence|table|16470|16474|1
 sequence|table|16472|16474|2
+sequence|table|16486|16492|1
+sequence|table|16488|16492|2
+sequence|table|16490|16492|3
 </Relations>
     </database>
     <database id="3" parent="1" name="inf1">
@@ -863,7 +866,7 @@ sequence|table|16472|16474|2
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>562</IntrospectionStateNumber>
+      <IntrospectionStateNumber>580</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="18" parent="2" name="heap">
@@ -975,38 +978,61 @@ sequence|table|16472|16474|2
       <StateNumber>542</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
-    <sequence id="37" parent="17" name="users_id_seq">
+    <sequence id="37" parent="17" name="review_id_seq">
+      <ObjectId>16486</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>575</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="38" parent="17" name="review_product_id_seq">
+      <ObjectId>16488</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>575</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="39" parent="17" name="review_user_id_seq">
+      <ObjectId>16490</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>575</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="40" parent="17" name="users_id_seq">
       <ObjectId>16422</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>521</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
-    <table id="38" parent="17" name="bouquets">
+    <table id="41" parent="17" name="bouquets">
       <ObjectId>16442</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>546</StateNumber>
     </table>
-    <table id="39" parent="17" name="flowers">
+    <table id="42" parent="17" name="flowers">
       <ObjectId>16458</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>554</StateNumber>
     </table>
-    <table id="40" parent="17" name="pots">
+    <table id="43" parent="17" name="pots">
       <ObjectId>16474</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>560</StateNumber>
     </table>
-    <table id="41" parent="17" name="product">
+    <table id="44" parent="17" name="product">
       <ObjectId>16432</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>549</StateNumber>
     </table>
-    <table id="42" parent="17" name="users">
+    <table id="45" parent="17" name="review">
+      <ObjectId>16492</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>575</StateNumber>
+    </table>
+    <table id="46" parent="17" name="users">
       <ObjectId>16424</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>521</StateNumber>
+      <StateNumber>578</StateNumber>
     </table>
-    <column id="43" parent="38" name="id">
+    <column id="47" parent="41" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1014,7 +1040,7 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;bouquets_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="44" parent="38" name="product_id">
+    <column id="48" parent="41" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1022,39 +1048,39 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;bouquets_product_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="38" name="number_of_flowers">
+    <column id="49" parent="41" name="number_of_flowers">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>546</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="38" name="description">
+    <column id="50" parent="41" name="description">
       <Position>4</Position>
       <DataType>varchar(300)|0s</DataType>
       <StateNumber>546</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="47" parent="38" name="production_date">
+    <column id="51" parent="41" name="production_date">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <StateNumber>546</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="48" parent="38" name="bouquets_pkey">
+    <index id="52" parent="41" name="bouquets_pkey">
       <ObjectId>16447</ObjectId>
       <StateNumber>546</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="49" parent="38" name="bouquets_pkey">
+    <key id="53" parent="41" name="bouquets_pkey">
       <ObjectId>16448</ObjectId>
       <StateNumber>546</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>bouquets_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="50" parent="38" name="bouquets_product_id_fkey">
+    <foreign-key id="54" parent="41" name="bouquets_product_id_fkey">
       <ObjectId>16449</ObjectId>
       <StateNumber>546</StateNumber>
       <ColNames>product_id</ColNames>
@@ -1064,7 +1090,7 @@ sequence|table|16472|16474|2
       <RefKeyName>product_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="51" parent="39" name="id">
+    <column id="55" parent="42" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1072,7 +1098,7 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;flowers_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="52" parent="39" name="product_id">
+    <column id="56" parent="42" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1080,39 +1106,39 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;flowers_product_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="53" parent="39" name="stem_length">
+    <column id="57" parent="42" name="stem_length">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>554</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="54" parent="39" name="color">
+    <column id="58" parent="42" name="color">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="55" parent="39" name="description">
+    <column id="59" parent="42" name="description">
       <Position>5</Position>
       <DataType>varchar(300)|0s</DataType>
       <StateNumber>554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="56" parent="39" name="flowers_pkey">
+    <index id="60" parent="42" name="flowers_pkey">
       <ObjectId>16463</ObjectId>
       <StateNumber>554</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="57" parent="39" name="flowers_pkey">
+    <key id="61" parent="42" name="flowers_pkey">
       <ObjectId>16464</ObjectId>
       <StateNumber>554</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>flowers_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="58" parent="39" name="flowers_product_id_fkey">
+    <foreign-key id="62" parent="42" name="flowers_product_id_fkey">
       <ObjectId>16465</ObjectId>
       <StateNumber>554</StateNumber>
       <ColNames>product_id</ColNames>
@@ -1122,7 +1148,7 @@ sequence|table|16472|16474|2
       <RefKeyName>product_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="59" parent="40" name="id">
+    <column id="63" parent="43" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1130,7 +1156,7 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;pots_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="60" parent="40" name="product_id">
+    <column id="64" parent="43" name="product_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1138,45 +1164,45 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;pots_product_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="61" parent="40" name="diameter">
+    <column id="65" parent="43" name="diameter">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>560</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="62" parent="40" name="color">
+    <column id="66" parent="43" name="color">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="63" parent="40" name="material">
+    <column id="67" parent="43" name="material">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="64" parent="40" name="description">
+    <column id="68" parent="43" name="description">
       <Position>6</Position>
       <DataType>varchar(300)|0s</DataType>
       <StateNumber>560</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="65" parent="40" name="pots_pkey">
+    <index id="69" parent="43" name="pots_pkey">
       <ObjectId>16479</ObjectId>
       <StateNumber>560</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="66" parent="40" name="pots_pkey">
+    <key id="70" parent="43" name="pots_pkey">
       <ObjectId>16480</ObjectId>
       <StateNumber>560</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>pots_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="67" parent="40" name="pots_product_id_fkey">
+    <foreign-key id="71" parent="43" name="pots_product_id_fkey">
       <ObjectId>16481</ObjectId>
       <StateNumber>560</StateNumber>
       <ColNames>product_id</ColNames>
@@ -1186,7 +1212,7 @@ sequence|table|16472|16474|2
       <RefKeyName>product_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="68" parent="41" name="id">
+    <column id="72" parent="44" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1194,45 +1220,121 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;product_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="69" parent="41" name="type">
+    <column id="73" parent="44" name="type">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
       <StateNumber>542</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="70" parent="41" name="price">
+    <column id="74" parent="44" name="price">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>542</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="71" parent="41" name="number">
+    <column id="75" parent="44" name="number">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>542</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="72" parent="41" name="name">
+    <column id="76" parent="44" name="name">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>549</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="73" parent="41" name="product_pkey">
+    <index id="77" parent="44" name="product_pkey">
       <ObjectId>16436</ObjectId>
       <StateNumber>542</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="74" parent="41" name="product_pkey">
+    <key id="78" parent="44" name="product_pkey">
       <ObjectId>16437</ObjectId>
       <StateNumber>542</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>product_pkey</UnderlyingIndexName>
     </key>
-    <column id="75" parent="42" name="id">
+    <column id="79" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>575</StateNumber>
+      <DefaultExpression>nextval(&apos;review_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="80" parent="45" name="product_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>575</StateNumber>
+      <DefaultExpression>nextval(&apos;review_product_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="81" parent="45" name="user_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>575</StateNumber>
+      <DefaultExpression>nextval(&apos;review_user_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="82" parent="45" name="stars">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>575</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="83" parent="45" name="text">
+      <Position>5</Position>
+      <DataType>varchar(300)|0s</DataType>
+      <StateNumber>575</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="84" parent="45" name="date">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>575</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="85" parent="45" name="review_pkey">
+      <ObjectId>16498</ObjectId>
+      <StateNumber>575</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="86" parent="45" name="review_pkey">
+      <ObjectId>16499</ObjectId>
+      <StateNumber>575</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>review_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="87" parent="45" name="review_product_id_fkey">
+      <ObjectId>16500</ObjectId>
+      <StateNumber>575</StateNumber>
+      <ColNames>product_id</ColNames>
+      <RefTableId>16432</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>product</RefTableName>
+      <RefKeyName>product_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="88" parent="45" name="review_user_id_fkey">
+      <ObjectId>16505</ObjectId>
+      <StateNumber>578</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16424</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="89" parent="46" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1240,44 +1342,44 @@ sequence|table|16472|16474|2
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="76" parent="42" name="email">
+    <column id="90" parent="46" name="email">
       <Position>2</Position>
       <DataType>varchar(40)|0s</DataType>
       <StateNumber>521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="77" parent="42" name="hashed_password">
+    <column id="91" parent="46" name="hashed_password">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <StateNumber>521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="78" parent="42" name="first_name">
+    <column id="92" parent="46" name="first_name">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="79" parent="42" name="phone_number">
+    <column id="93" parent="46" name="phone_number">
       <Position>5</Position>
       <DataType>varchar(12)|0s</DataType>
       <StateNumber>521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="80" parent="42" name="birthday">
+    <column id="94" parent="46" name="birthday">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="81" parent="42" name="users_pkey">
+    <index id="95" parent="46" name="users_pkey">
       <ObjectId>16428</ObjectId>
       <StateNumber>521</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="82" parent="42" name="users_pkey">
+    <key id="96" parent="46" name="users_pkey">
       <ObjectId>16429</ObjectId>
       <StateNumber>521</StateNumber>
       <ColNames>id</ColNames>

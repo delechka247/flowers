@@ -57,16 +57,16 @@
                     <div class="panel-heading">
                         <header class="panel-title">
                             <div class="text-center">
-                                <strong>Название товара</strong>
+                                <strong>${bouquet.getName()}</strong>
                             </div>
                         </header>
                     </div>
                     <div class="panel-body">
                         <div class="text-center">
-                            <img src="../../images/products/rose.jpg" height="243" width="248" alt="photo"/>
-                            <h3>Цена</h3>
+                            <img src="resources/images/bouquets/${bouquet.getId()}.jpg" height="243" width="248" alt="photo"/>
+                            <h3>Цена: ${bouquet.getPrice()}</h3>
 
-                            <p>Описание товара</p>
+                            <p>${bouquet.getDescription()}</p>
                         </div>
                     </div>
                 </div>
@@ -82,16 +82,20 @@
                             <table class="table table-th-block">
                                 <tbody>
                                 <tr>
-                                    <td class="active">тип</td>
-                                    <td>роза</td>
+                                    <td class="active">Тип</td>
+                                    <td>${bouquet.getType()}</td>
                                 </tr>
                                 <tr>
-                                    <td class="active">цвет</td>
-                                    <td>красный</td>
+                                    <td class="active">Количество цветов в букете</td>
+                                    <td>${bouquet.getNumberOfFlowers()}</td>
                                 </tr>
                                 <tr>
-                                    <td class="active">длина стебля</td>
-                                    <td>10 см</td>
+                                    <td class="active">Количество букетов в наличии</td>
+                                    <td>${bouquet.getNumber()}</td>
+                                </tr>
+                                <tr>
+                                    <td class="active">Дата сборки букета</td>
+                                    <td>${bouquet.getProductionDate()}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -105,18 +109,20 @@
                             Оставьте свой комментарий
                         </div>
                         <div class="panel-body">
-                            <form name="comment" action="">
-                                <p>
-                                    <label>Имя:</label>
-                                    <input type="text" name="name"/>
-                                </p>
-                                <p>
+                            <form action="/Flowers_project_war/product?id=${bouquet.getId()}" name="comment" method="post">
+
+                                    <select name="stars">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                     <label>Комментарий:</label>
                                     <br/>
                                     <label>
-                                        <textarea name="text_comment" cols="30" rows="5"></textarea>
+                                        <textarea name="text" cols="30" rows="5"></textarea>
                                     </label>
-                                </p>
                                 <p>
                                     <input type="submit" value="Отправить"/>
                                 </p>

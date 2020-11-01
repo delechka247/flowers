@@ -1,9 +1,11 @@
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\ProductService.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\BouquetsRepositoryImpl.java
+C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\ReviewRepository.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\BouquetsRepository.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\models\Pot.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\PotsRepository.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\UsersServiceImpl.java
+C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\ReviewRepositoryImpl.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\CatalogServlet.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\UsersService.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\models\Bouquet.java
@@ -12,6 +14,7 @@ C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\Registratio
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\LoginServiceImpl.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\models\Flower.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\LoginServlet.java
+C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\models\Review.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\ApplicationsServlet.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\PotsRepositoryImpl.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\RegistrationServlet.java

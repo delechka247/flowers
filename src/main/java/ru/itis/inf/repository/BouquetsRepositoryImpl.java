@@ -1,11 +1,10 @@
 package ru.itis.inf.repository;
 
 import ru.itis.inf.models.Bouquet;
+import ru.itis.inf.models.User;
+
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +13,9 @@ public class BouquetsRepositoryImpl implements BouquetsRepository{
 
     //language=SQL
     private static final String SQL_FIND_ALL_BOUQUETS = "select * from product inner join bouquets on product.id=bouquets.product_id";
+
+    //language=SQL
+    private static final String SQL_FIND_BOUQUET_BY_ID = "select * from product inner join bouquets on product.id=bouquets.product_id where product_id = ? limit 1";
 
     private RowMapper<Bouquet> bouquetRowMapper   = row -> Bouquet.builder()
             .id(row.getLong("product_id"))
@@ -32,7 +34,46 @@ public class BouquetsRepositoryImpl implements BouquetsRepository{
 
     @Override
     public Bouquet findOneById(long id) {
-        return null;
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        Bouquet bouquet;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_FIND_BOUQUET_BY_ID);
+
+            statement.setLong(1, id);
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                bouquet = bouquetRowMapper.mapRow(resultSet);
+            } else {
+                throw new SQLException("User not found");
+            }
+            return bouquet;
+
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                }
+            }
+        }
     }
 
     @Override

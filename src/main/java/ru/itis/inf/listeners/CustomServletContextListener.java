@@ -40,8 +40,9 @@ public class CustomServletContextListener implements ServletContextListener {
         BouquetsRepository bouquetsRepository = new BouquetsRepositoryImpl(dataSource);
         FlowersRepository flowersRepository = new FlowersRepositoryImpl(dataSource);
         PotsRepository potsRepository = new PotsRepositoryImpl(dataSource);
+        ReviewRepository reviewRepository = new ReviewRepositoryImpl(dataSource);
 
-        ProductService productService = new ProductServiceImpl(bouquetsRepository, flowersRepository, potsRepository);
+        ProductService productService = new ProductServiceImpl(bouquetsRepository, flowersRepository, potsRepository, reviewRepository);
         servletContext.setAttribute("productService", productService);
     }
 
