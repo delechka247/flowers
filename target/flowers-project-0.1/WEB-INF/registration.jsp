@@ -192,52 +192,14 @@
         }
 
         .content {
-            padding-top: 80px;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
-
-
-<div class="index">
-    <nav class="navbar navbar-expand-lg navbar-dark position-fixed bg-dark pl-4 pt-3 pb-1 mb-0"
-         style="background-image: url(https://10factov.net/uploads/facts/520-fact-main-840.jpg); width: 100%; z-index: initial">
-        <a class="navbar-brand" href="../index.html"
-           style="font-size: xx-large; font-family: Pompadur, 'Comic Sans MS', cursive;"><b><i>Flowers </i></b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav justify-content-between" style="width: 100%">
-                <li class="nav-item ml-5 mr-5">
-                    <a class="nav-link active" href="catalog.html"><h5><b>Каталог</b></h5></a>
-                </li>
-                <li class="nav-item active ml-5 mr-5">
-                    <a class="nav-link active" href="bouquets.html"><h5><b>Букеты</b></h5></a>
-                </li>
-                <li class="nav-item ml-5 mr-5">
-                    <a class="nav-link active" href="flowers.html"><h5><b>Цветы</b></h5></a>
-                </li>
-                <li class="nav-item ml-5 mr-5">
-                    <a class="nav-link active" href="pots.html"><h5><b>Горшки</b></h5></a>
-                </li>
-                <li class="nav-item ml-5 mr-5">
-                    <a class="nav-link active" href="profile.html"><h5><b>Личный кабинет</b></h5></a>
-                </li>
-                <!--            <li class="nav-item ml-5 mr-5">-->
-                <!--                <a class="nav-link active" href="navbar/profile.html"><b>Вход/Регистрация</b></a>-->
-                <!--            </li>-->
-            </ul>
-        </div>
-    </nav>
-</div>
-
+<%@ include file="navbar.jsp" %>
 
 <div class="content">
-
-
     <div class="container pl-0 left col-md-12">
         <div class="row">
 

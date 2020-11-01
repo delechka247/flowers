@@ -14,6 +14,7 @@ ru\itis\inf\services\RegistrationService.class
 ru\itis\inf\services\UsersServiceImpl.class
 ru\itis\inf\servlets\LoginServlet.class
 ru\itis\inf\repository\UsersRepositoryImpl.class
+ru\itis\inf\servlets\CatalogServlet.class
 ru\itis\inf\servlets\MainServlet.class
 ru\itis\inf\models\User.class
 ru\itis\inf\servlets\SettingsServlet.class

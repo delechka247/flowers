@@ -57,6 +57,15 @@
         <url-pattern>/settings</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>catalog-servlet</servlet-name>
+        <servlet-class>ru.itis.inf.servlets.CatalogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>catalog-servlet</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/resources/*</url-pattern>

@@ -18,45 +18,11 @@
 
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark pl-4 pt-3 pb-3 sticky-top"
-     style="background-image: url(https://10factov.net/uploads/facts/520-fact-main-840.jpg)">
-    <a class="navbar-brand" href="../index.html"
-       style="font-size: xx-large; font-family: Pompadur, 'Comic Sans MS', cursive;"><b><i>Flowers</i></b></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav justify-content-between" style="width: 100%">
-            <li class="nav-item ml-5 mr-5">
-                <a class="nav-link active" href="catalog.html"><h3><b>Каталог</b></h3></a>
-            </li>
-            <li class="nav-item active ml-5 mr-5">
-                <a class="nav-link active" href="bouquets.html"><h3><b>Букеты</b></h3></a>
-            </li>
-            <li class="nav-item ml-5 mr-5">
-                <a class="nav-link active" href="flowers.html"><h3><b>Цветы</b></h3></a>
-            </li>
-            <li class="nav-item ml-5 mr-5">
-                <a class="nav-link active" href="pots.html"><h3><b>Горшки</b></h3></a>
-            </li>
-            <li class="nav-item ml-5 mr-5">
-                <a class="nav-link active" href="#"><h3><b>Личный кабинет</b></h3></a>
-            </li>
-            <!--            <li class="nav-item ml-5 mr-5">-->
-            <!--                <a class="nav-link active" href="navbar/profile.html"><b>Вход/Регистрация</b></a>-->
-            <!--            </li>-->
-        </ul>
-    </div>
-</nav>
-
+<%@ include file="navbar.jsp" %>
 
 <br><br><br>
 
 <style>
-
 
     #main {
         background-color: #f2f2f2;
@@ -115,7 +81,7 @@
                         <div class="text-center" id="author">
                             <img src="https://sun9-33.userapi.com/nV356FyoOQ0S8ExA0RhNwqLjzCbRaHqOwmF36g/yVqigC76wAA.jpg">
 
-                            <h3>Михаил Казаков</h3>
+                            <h3>${name}</h3>
                         </div>
                     </div>
                 </div>
