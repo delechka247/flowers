@@ -1,17 +1,23 @@
 package ru.itis.inf.repository;
 
+import ru.itis.inf.models.Flower;
 import ru.itis.inf.models.Pot;
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PotsRepositoryImpl implements PotsRepository{
     private DataSource dataSource;
 
     //language=SQL
-    //private static final String SQL_FIND_BY_ID = "select * from users where id = ? limit 1";
+    private static final String SQL_FIND_ALL_POTS = "select * from product inner join pots on product.id=pots.product_id";
 
-    private RowMapper<Pot> bouquetRowMapper   = row -> Pot.builder()
-            .id(row.getLong("id"))
+    private RowMapper<Pot> potRowMapper   = row -> Pot.builder()
+            .id(row.getLong("product_id"))
             .type(row.getString("name"))
             .price(row.getInt("price"))
             .number(row.getInt("number"))
@@ -34,7 +40,47 @@ public class PotsRepositoryImpl implements PotsRepository{
 
     @Override
     public List<Pot> findAll() {
-        return null;
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(SQL_FIND_ALL_POTS);
+
+            List<Pot> result = new ArrayList<>();
+
+            while (resultSet.next()) {
+                result.add(potRowMapper.mapRow(resultSet));
+            }
+
+            return result;
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                    //ignore
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                    // ignore
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                    // ignore
+                }
+            }
+        }
     }
 
     @Override

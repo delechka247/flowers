@@ -1,8 +1,7 @@
 package ru.itis.inf.listeners;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import ru.itis.inf.repository.UsersRepository;
-import ru.itis.inf.repository.UsersRepositoryImpl;
+import ru.itis.inf.repository.*;
 import ru.itis.inf.services.*;
 
 import javax.servlet.ServletContext;
@@ -37,6 +36,13 @@ public class CustomServletContextListener implements ServletContextListener {
 
         UsersService usersService = new UsersServiceImpl(usersRepository);
         servletContext.setAttribute("usersService", usersService);
+
+        BouquetsRepository bouquetsRepository = new BouquetsRepositoryImpl(dataSource);
+        FlowersRepository flowersRepository = new FlowersRepositoryImpl(dataSource);
+        PotsRepository potsRepository = new PotsRepositoryImpl(dataSource);
+
+        ProductService productService = new ProductServiceImpl(bouquetsRepository, flowersRepository, potsRepository);
+        servletContext.setAttribute("productService", productService);
     }
 
     @Override

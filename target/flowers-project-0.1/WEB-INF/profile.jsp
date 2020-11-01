@@ -86,7 +86,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="text-center" id="author">
-                            <img src="https://sun9-33.userapi.com/nV356FyoOQ0S8ExA0RhNwqLjzCbRaHqOwmF36g/yVqigC76wAA.jpg">
+                            <img src="resources/images/avatar.png">
 
                             <h3>${name}</h3>
                         </div>

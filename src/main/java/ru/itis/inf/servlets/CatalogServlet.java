@@ -1,6 +1,7 @@
 package ru.itis.inf.servlets;
 
 import ru.itis.inf.models.User;
+import ru.itis.inf.services.ProductService;
 import ru.itis.inf.services.UsersService;
 
 import javax.servlet.ServletConfig;
@@ -14,16 +15,23 @@ import java.io.IOException;
 
 public class CatalogServlet extends HttpServlet {
     private UsersService usersService;
+    private ProductService productService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         ServletContext servletContext = config.getServletContext();
         usersService = (UsersService) config.getServletContext().getAttribute("usersService");
+        productService = (ProductService) config.getServletContext().getAttribute("productService");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+          request.setAttribute("bouquetsList", productService.getAllBouquets());
+        request.setAttribute("flowersList", productService.getAllFlowers());
+        request.setAttribute("potsList", productService.getAllPots());
+
         request.getRequestDispatcher("/WEB-INF/catalog.jsp").forward(request, response);
     }
 
