@@ -7,7 +7,6 @@ C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\UsersServic
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\CatalogServlet.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\LoginService.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\MainServlet.java
-C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\utils\PasswordMaker.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\UsersService.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\CrudRepository.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\RegistrationServiceImpl.java
@@ -19,3 +18,4 @@ C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\SettingsSer
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\repository\UsersRepository.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\services\RegistrationService.java
 C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\servlets\ApplicationsServlet.java
+C:\myPrograms\inf\Flowers project\src\main\java\ru\itis\inf\utils\InfoValidator.java

@@ -3,7 +3,6 @@ ru\itis\inf\servlets\ApplicationsServlet.class
 ru\itis\inf\services\LoginServiceImpl.class
 ru\itis\inf\services\UsersService.class
 ru\itis\inf\servlets\RegistrationServlet.class
-ru\itis\inf\utils\PasswordMaker.class
 ru\itis\inf\filters\AuthenticationFilter.class
 ru\itis\inf\repository\CrudRepository.class
 ru\itis\inf\servlets\ProfileServlet.class
@@ -14,6 +13,7 @@ ru\itis\inf\services\RegistrationService.class
 ru\itis\inf\services\UsersServiceImpl.class
 ru\itis\inf\servlets\LoginServlet.class
 ru\itis\inf\repository\UsersRepositoryImpl.class
+ru\itis\inf\utils\InfoValidator.class
 ru\itis\inf\servlets\CatalogServlet.class
 ru\itis\inf\servlets\MainServlet.class
 ru\itis\inf\models\User.class
