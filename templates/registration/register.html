@@ -238,7 +238,7 @@
                 <form class="form-horizontal p-3 rounded-1 shadow-lg">
                     <span class="heading">РЕГИСТРАЦИЯ</span>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="inputEmail2" placeholder="E-mail">
+                        <input type="email" class="form-control" id="inputEmail1" placeholder="E-mail">
                         <i class="fa fa-user"></i>
                     </div>
                     <div class="form-group help">
@@ -251,7 +251,7 @@
                         <i class="fa fa-lock"></i>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Регистрация</button>
+                        <button type="submit" class="btn btn-success" onclick="checkParams()">Регистрация</button>
                     </div>
                 </form>
             </div>
@@ -259,6 +259,26 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div>
+<script>
+    function checkParams() {
+
+            var password = document.getElementById("inputPassword2");
+            if (password.value.length >= 20 || password.value.length <= 8) {
+                alert("password must be 8-20 signs");
+            }
+
+            var email = document.getElementById("inputEmail1");
+            var passwordCopy = document.getElementById("inputPassword3");
+            if (password !== passwordCopy){
+                alert("passwords must match(пароли должны совпадать)");
+            }
+
+            if (Object.keys(email).length === 0) {
+                alert("введите почту");
+            }
+    }
+</script>
+
 
 </body>
 </html>
