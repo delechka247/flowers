@@ -281,6 +281,25 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div>
+<script>
+    function checkParams() {
+
+        var password = document.getElementById("inputPassword2");
+        if (password.value.length >= 20 || password.value.length <= 8) {
+            alert("password must be 8-20 signs");
+        }
+
+        var email = document.getElementById("inputEmail2");
+        var passwordCopy = document.getElementById("inputPassword3");
+        if (password !== passwordCopy){
+            alert("passwords must match(пароли должны совпадать)");
+        }
+
+        if (Object.keys(email).length === 0) {
+            alert("введите почту");
+        }
+    }
+</script>
 
 </body>
 </html>

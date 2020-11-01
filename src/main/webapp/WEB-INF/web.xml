@@ -39,4 +39,28 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>applications-servlet</servlet-name>
+        <servlet-class>ru.itis.inf.servlets.ApplicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>applications-servlet</servlet-name>
+        <url-pattern>/applications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>settings-servlet</servlet-name>
+        <servlet-class>ru.itis.inf.servlets.SettingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>settings-servlet</servlet-name>
+        <url-pattern>/settings</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resources/*</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

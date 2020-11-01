@@ -3,10 +3,7 @@ package ru.itis.inf.listeners;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import ru.itis.inf.repository.UsersRepository;
 import ru.itis.inf.repository.UsersRepositoryImpl;
-import ru.itis.inf.services.LoginService;
-import ru.itis.inf.services.LoginServiceImpl;
-import ru.itis.inf.services.RegistrationService;
-import ru.itis.inf.services.RegistrationServiceImpl;
+import ru.itis.inf.services.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -37,6 +34,9 @@ public class CustomServletContextListener implements ServletContextListener {
 
         LoginService loginService = new LoginServiceImpl(usersRepository);
         servletContext.setAttribute("loginService", loginService);
+
+        UsersService usersService = new UsersServiceImpl(usersRepository);
+        servletContext.setAttribute("usersService", usersService);
     }
 
     @Override

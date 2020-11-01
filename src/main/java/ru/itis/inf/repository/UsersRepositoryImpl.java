@@ -4,6 +4,7 @@ import ru.itis.inf.models.User;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsersRepositoryImpl implements UsersRepository {
@@ -16,6 +17,16 @@ public class UsersRepositoryImpl implements UsersRepository {
     //language=SQL
     private static final String SQL_FIND_BY_EMAIL = "select * from users where email = ? limit 1";
 
+    //language=SQL
+    private static final String SQL_FIND_BY_ID = "select * from users where id = ? limit 1";
+
+    private RowMapper<User> usersRowMapper = row -> User.builder()
+            .id(row.getLong("id"))
+            .email(row.getString("email"))
+            .firstName(row.getString("first_name"))
+            .phoneNumber(row.getString("phone_number"))
+            .birthday(row.getString("birthday"))
+            .build();
 
     public UsersRepositoryImpl(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -89,8 +100,47 @@ public class UsersRepositoryImpl implements UsersRepository {
     }
 
     @Override
-    public List<User> findAllById(int id) {
-        return null;
+    public User findOneById(long id) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        User user;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_FIND_BY_ID);
+
+            statement.setLong(1, id);
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                user = usersRowMapper.mapRow(resultSet);
+            } else {
+                throw new SQLException("User not found");
+            }
+            return user;
+
+        } catch (SQLException e) {
+            throw new IllegalStateException(e);
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException throwables) {
+                }
+            }
+        }
     }
 
     @Override
